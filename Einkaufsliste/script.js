@@ -18,7 +18,20 @@ addButton.addEventListener("click", () => {
     // Neues Element erstellen und in die Liste einfügen
     const new_li = document.createElement("li");
 
-    new_li.textContent = `${anzahl} x ${artikel}: ${preis}€ l'unité ------ ${anzahl * preis}€`;
+    const kategorieInput = document.getElementById("kategorie");
+    const kategorie = kategorieInput.value;
+    let emoji = "";
+    if (kategorie === "obst") emoji = "🍏";
+    else if (kategorie === "gemuese") emoji = "🥦";
+    else if (kategorie === "drogerie") emoji = "🧴";
+    else if (kategorie === "konserven") emoji = "🥫";
+    else if (kategorie === "getraenke") emoji = "🍾";
+    else if (kategorie === "gebaeck") emoji = "🍞";
+    else if (kategorie === "krams") emoji = "🕹️";
+
+    new_li.textContent = `${emoji} ${anzahl} x ${artikel}: ${preis}€  ------ ${anzahl * preis}€`;
+
+    
 
 
 
@@ -112,14 +125,3 @@ modeDark.addEventListener("click", () => {
 
 })
 
-const kategorieInput = document.getElementById("kategorie");
-    const kategorie = kategorieInput.value;
-    let emoji = "";
-    if (kategorie === "obst") emoji = "🍏";
-    else if (kategorie === "gemuese") emoji = "🥦";
-    else if (kategorie === "drogerie") emoji = "🧴";
-    else if (kategorie === "konserven") emoji = "🥫";
-    else if (kategorie === "getraenke") emoji = "🍾";
-    else if (kategorie === "gebaeck") emoji = "🍞";
-    else if (kategorie === "krams") emoji = "🕹️";
-    new_li.textContent = `${emoji} ${anzahl} x ${artikel}: ${preis}€ ------ ${anzahl * preis}€`;
